@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+    int t, a, s, b;
+
+    vector<int> v;
+
+    while(cin>>t)
+    {
+        v.push_back(t);
+
+        a = v.size();
+
+        if(a == 1)
+        {
+                cout<<v[0]<<endl;
+        }
+        else if(a == 2)
+            {
+                cout<<(v[0] + v[1]) / 2<<endl;
+            }
+        else
+        {
+            sort(v.begin(), v.end());
+
+            if(a % 2 == 0)
+            {
+                b = a / 2;
+
+                s = (v[b] + v[b-1]) / 2;
+
+                cout<<s<<endl;
+            }
+            else
+            {
+                b = a / 2;
+
+                cout<<v[b]<<endl;
+            }
+        }
+    }
+
+
+    return 0;
+
+}
