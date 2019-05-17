@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+    double w, r, a, b, l;
+
+    int t;
+
+
+    cin>>t;
+
+    while(t--)
+    {
+        cin>>l;
+
+        w = (6.0 * l) / 10.0;
+
+        r = (2.0 * l) / 10.0;
+
+        a = acos(-1) * r * r;
+
+        b = (l * w) - a;
+
+         std::cout << std::setprecision(2) << std::fixed;
+
+        cout<<a<<" "<<b<<endl;
+    }
+
+
+    return 0;
+
+}
