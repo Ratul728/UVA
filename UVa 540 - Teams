@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long BigMod( long long b , long long p , long long MOD )
+{
+        long long res = 1%MOD , x = b%MOD;
+
+        while( p )
+        {
+                if ( p & 1 ) res = ( res * x ) % MOD;
+                x = ( x * x ) % MOD;
+                p >>= 1;
+        }
+        return res%MOD;
+}
+int main( )
+{
+        long long int t,n, m = 1, temp, a;
+
+        cin>>t;
+
+        while(t--)
+        {
+            cin>>n;
+
+            printf("Case #%d: ", m);
+
+            temp = BigMod(2, n-1, 1000000007);
+
+            a = (n % 1000000007 * temp % 1000000007) % 1000000007;
+
+            cout<<a<<endl;
+
+            m++;
+        }
+
+
+
+        return 0;
+}
