@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+    double a,b,c,p,s,k,r,sun,v,red;
+
+    while(cin>>a>>b>>c)
+    {
+        p = (a + b + c) * 0.5;
+
+        s = sqrt((p * (p - a) * (p - b) * (p - c)));
+
+        k = (a * b * c / 4) / s;
+
+        r = sqrt((p - a) * (p - b) * (p - c) / p);
+
+        sun = (acos(-1) * k * k) - s;
+
+        red = acos(-1) * r *r;
+
+        v = s - red;
+
+
+
+        printf("%0.4f %0.4f %0.4f\n", sun, v, red);
+
+    }
+
+
+    return 0;
+
+}
