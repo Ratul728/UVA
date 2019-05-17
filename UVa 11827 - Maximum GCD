@@ -1,0 +1,87 @@
+#include<bits/stdc++.h>
+
+
+
+
+
+using namespace std;
+
+
+
+int gcd(int a, int b)
+
+{
+
+    if(b == 0) return a;
+
+
+
+    return gcd(b,a % b);
+
+}
+
+
+
+
+
+int main()
+
+{
+
+    int t,i,j,m,g,k,b;
+
+    int a[105];
+
+
+
+    cin>>t;
+
+
+
+    for(k = 0; k < t; k++)
+
+    {
+
+        m = 0;
+
+        i = 0;
+
+
+
+        while(scanf("%d", &b) != EOF)
+
+            {
+
+                a[i] = b;
+
+                i++;
+
+            }
+
+
+
+        for(i = 0; i < t - 1; i++)
+
+        {
+
+            for(j = i+1; j < t; j++)
+
+            {
+
+                g = gcd(a[i], a[j]);
+
+                if(g > m) m = g;
+
+            }
+
+        }
+
+        cout<<m<<endl;
+
+    }
+
+
+
+
+
+}
