@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main( )
+{
+    int t;
+
+    string a, b;
+
+    map<string, string> v;
+
+    cin>>t;
+
+    getchar();
+
+    while(t--)
+    {
+        getline(cin, a);
+        getline(cin, b);
+
+        v.insert(make_pair(a,b));
+    }
+
+    cin>>t;
+
+    getchar();
+
+    while(t--)
+    {
+        getline(cin, a);
+
+        cout<<v[a]<<endl;
+    }
+
+}
