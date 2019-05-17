@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+    int m = 1;
+
+    string s;
+
+    while(1)
+    {
+        cin>>s;
+
+        if(s.compare("*") == 0)
+            return 0;
+
+        else if(s.compare("Hajj") == 0)
+            printf("Case %d: Hajj-e-Akbar\n", m);
+        else
+            printf("Case %d: Hajj-e-Asghar\n", m);
+
+        m++;
+    }
+
+
+
+
+    return 0;
+
+}
