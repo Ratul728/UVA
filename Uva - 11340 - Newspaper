@@ -4,29 +4,49 @@ using namespace std;
 
 int main( )
 {
-    int t = 10, n, a;
+    int t, n, b;
+    double sum;
+    char a;
+    string s;
 
-    vector<int> v;
-    map<int , int> m;
 
-    while(cin>>a)
+    map<char , int> m;
+
+    cin>>t;
+
+    while(t--)
     {
+        sum = 0.0;
 
-        if(m.count(a) == 0)
-        {
-            m[a] = 1;
+        cin>>n;
 
-            v.push_back(a);
-        }
-        else
+        while(n--)
         {
-            m[a]++;
+            cin>>a>>b;
+
+            m[a] = b;
         }
+
+        cin>>n;
+
+        getchar();
+
+        while(n--)
+        {
+            getline(cin, s);
+
+            b = s.size();
+
+            for(int i =0; i < b; i++)
+            {
+                if(m.count(s[i]))
+                    sum += m[s[i]];
+            }
+        }
+
+        printf("%0.2f$\n", sum/100);
+
+        m.clear();
     }
-
-    t = v.size();
-
-    for(int i = 0; i < t; i++)
-        cout<<v[i]<<" "<<m[v[i]]<<endl;
 
 }
