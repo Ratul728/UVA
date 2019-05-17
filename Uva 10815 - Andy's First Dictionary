@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main( )
+{
+    int t, b;
+
+    set<string> v;
+    set<string> :: iterator it;
+
+    string s, a;
+
+    while(getline(cin, a))
+    {
+        b = a.size();
+
+        for(int i = 0; i < b; i++)
+        {
+            if(a[i] >= 65 && a[i] <= 92)
+                a[i] += 32;
+
+            if(a[i] < 97 || a[i] > 122)
+                a[i] = ' ';
+        }
+
+        stringstream is (a);
+
+        while(is >> s)
+            v.insert(s);
+    }
+
+    for(it = v.begin(); it != v.end(); it++)
+            cout<<*it<<endl;
+}
