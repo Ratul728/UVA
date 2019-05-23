@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main( )
+{
+    int s = 0,k, t;
+
+    string a;
+
+    cin>>t;
+
+    while(t--)
+    {
+        cin>>a;
+
+        if(a.compare("donate") == 0)
+        {
+            cin>>k;
+
+            s += k;
+        }
+        else
+            cout<<s<<endl;
+    }
+}
