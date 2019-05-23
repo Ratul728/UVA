@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int p,b,h,w,l,hp,a;
+
+
+    while(cin>>p>>b>>h>>w)
+    {
+        l = b + 1;
+
+        while(h--)
+        {
+            cin>>hp;
+
+            for(int i = 0; i < w; i++)
+            {
+                cin>>a;
+
+                if(a >= p)
+                {
+                    if(l > hp * p)
+                        l = hp * p;
+                }
+
+            }
+        }
+
+        if(l > b)
+            cout<<"stay home"<<endl;
+        else
+            cout<<l<<endl;
+    }
+}
