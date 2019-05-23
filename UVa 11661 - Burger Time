@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main( )
+{
+    int m =  2000001, a = 0, t;
+
+    char c = 'a';
+
+    string s;
+
+    while(1)
+    {
+        cin>>t;
+
+        if(t == 0)
+            break;
+
+        m =  2000001;
+        a = 0;
+
+        int d = -t;
+
+        int r = d;
+
+        cin>>s;
+
+        for(int i = 0; i < t; i++)
+        {
+
+            if(s[i] == 'Z')
+            {
+                m = 0;
+
+                break;
+            }
+
+            if(s[i] != '.')
+            {
+                if(s[i] == 'R')
+                {
+                    m = min(m, i - d);
+
+                    r = i;
+                }
+
+                else
+                {
+                    m = min(m, i - r);
+
+                    d = i;
+                }
+            }
+        }
+
+        cout<<m<<endl;
+    }
+}
