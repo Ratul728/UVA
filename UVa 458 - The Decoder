@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int a, l;
+
+    string s;
+
+    while(getline(cin, s))
+    {
+
+      l = s.size();
+
+      for(int i = 0; i < l; i++)
+        {
+            s[i] -= 7;
+
+            cout<<s[i];
+        }
+
+        cout<<endl;
+    }
+}
