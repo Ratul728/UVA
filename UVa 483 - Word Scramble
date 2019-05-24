@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int l;
+
+    vector <string> v;
+
+    string s, n;
+
+    while(getline(cin, s))
+    {
+        stringstream ss (s);
+
+        while(ss >> n)
+            v.push_back(n);
+
+        l = v.size();
+
+        for(int i = 0; i < l; i++)
+        {
+
+                for(int j = v[i].size(); j >= 0; j--)
+                {
+
+                    if(v[i][j] == '\0')
+                        continue;
+                    cout<<v[i][j];
+                }
+
+            if(i < l -1)
+                cout<<" ";
+        }
+
+        cout<<endl;
+
+        v.clear();
+    }
+}
