@@ -1,0 +1,72 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t, b,cc, cr;
+
+    while(cin>>t, t !=0)
+    {
+        int r[105] = {0}, c[105] = {0};
+
+        bool v = true , rf = false , cf = false;
+
+        for(int i = 0; i < t; i++)
+        {
+            for(int j = 0; j < t; j++)
+            {
+                cin>>b;
+
+                r[i] += b;
+
+                c[j] += b;
+            }
+        }
+
+        for(int i =0; i < t; i++)
+        {
+            if(r[i] % 2 != 0)
+            {
+                if(!rf)
+                {
+                    rf = true;
+
+                    cr = i;
+                }
+                else
+                {
+                    v = false;
+                    break;
+
+                }
+            }
+
+            if(c[i] % 2 != 0)
+            {
+                if(!cf)
+                {
+                    cf = true;
+
+                    cc = i;
+                }
+                else
+                {
+                    v = false;
+                    break;
+
+                }
+            }
+        }
+
+        if(!v)
+            cout<<"Corrupt"<<endl;
+
+        else if(cf || rf)
+            cout <<"Change bit ("<<cr+1<< "," <<cc+1<<")"<<endl;
+
+        else
+            cout<<"OK"<<endl;
+    }
+
+}
