@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    long long int t,a;
+
+    cin>>t;
+
+    while(t--)
+    {
+        cin>>a;
+
+        long long int low = 0, hi = 1000000000, mid, ans;
+
+        while(low <= hi)
+        {
+            mid = (low + hi) / 2;
+
+            long long int sum = (mid*(mid + 1)/ 2);
+
+            //cout<<"HI = "<<hi<<endl<<"Low = "<<low<<endl<<"Mid = "<<mid<<endl<<"Sum = "<<sum<<endl;
+
+            if(sum <= a)
+            {
+                ans = mid;
+
+                low = mid + 1;
+            }
+            else
+                hi = mid - 1;
+        }
+
+        cout<<ans<<endl;
+    }
+}
