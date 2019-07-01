@@ -1,0 +1,79 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t,q,a;
+
+    vector<int> v;
+
+    cin>>t;
+
+    for(int i = 0; i < t; i++)
+    {
+        cin>>a;
+
+        v.push_back(a);
+    }
+
+    v.erase(unique(v.begin(), v.end()), v.end());
+
+
+    cin>>q;
+
+    while(q--)
+    {
+        cin>>a;
+
+        bool f = false;
+
+        int lo = 0, hi = v.size(), mid;
+
+        while(lo <= hi)
+        {
+            mid = (lo + hi) / 2;
+
+            if(v[mid] == a)
+            {
+                f = true;
+                break;
+            }
+            else if(v[mid] > a)
+                hi = mid - 1;
+            else
+                lo = mid + 1;
+        }
+
+        if(f)
+        {
+            if(mid - 1 >= 0)
+                cout<<v[mid - 1]<<" ";
+            else
+                cout<<"X ";
+
+            if(mid + 1 < v.size())
+                cout<<v[mid+1]<<endl;
+            else
+                cout<<"X"<<endl;
+
+                //cout<<"MID = "<<v[mid + 1]<<endl;
+        }
+        else
+        {
+            if(v[mid] < a)
+                cout<<v[mid]<<" ";
+            else if(mid - 1 >= 0)
+                cout<<v[mid - 1]<<" ";
+            else
+                cout<<"X ";
+
+            if(v[mid] > a)
+                cout<<v[mid]<<endl;
+            else if(mid + 1 < v.size())
+                cout<<v[mid + 1]<<endl;
+            else
+                cout<<"X"<<endl;
+        }
+    }
+}
