@@ -1,0 +1,65 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t,a, d, m = 1;
+
+    vector<int> v;
+
+    cin>>t;
+
+    while(t--)
+    {
+        cin>>d;
+
+        v.push_back(0);
+
+        while(d--)
+        {
+            cin>>a;
+
+            v.push_back(a);
+        }
+
+        int lo = 0, hi = a, mid, low;
+
+        while(lo <= hi)
+        {
+            mid = (lo + hi) / 2;
+
+            int k = mid;
+
+            bool f = false;
+
+            for(int i = 1; i < v.size(); i++)
+            {
+                if(v[i] - v[i - 1] == k)
+                    k--;
+
+                else if(v[i] - v[i - 1] > k)
+                {
+                    f = true;
+                }
+            }
+
+            if(f)
+                lo = mid + 1;
+            else
+            {
+                low = mid;
+
+                hi = mid - 1;
+            }
+
+        }
+
+        cout<<"Case "<<m<<": "<<low<<endl;
+        m++;
+
+        v.clear();
+    }
+
+
+}
